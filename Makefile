@@ -6,35 +6,33 @@
 #    By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 15:48:53 by amontalb          #+#    #+#              #
-#    Updated: 2022/11/10 13:56:35 by amontalb         ###   ########.fr        #
+#    Updated: 2022/11/10 15:18:46 by amontalb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY : clean fclean all re
-
 NAME = libft.a
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-SRCS = $(shell find . -type f -name 'ft_*.c')
-OBJS = $(SRCS:.c=.o)
+
 HEADERS = libft.h
-LIB = ar rc
+SOURCES = $(shell find . -type f -name 'ft_*.c')
+OBJECTS = $(SOURCES:.c=.o)
 
+CFLAGS = -Wall -Wextra -Werror -I .
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADERS)
-	
-	
-all : $(NAME)
+all :    $(NAME)
 
-$(NAME) : $(OBJS)
-		$(LIB) $(NAME) $(OBJS)
-		
+$(NAME) : $(OBJECTS)
+	$(AR) rcs $@ $^
 
-clean : 
-	rm -f $(OBJS)
+%.o : %.c $(HEADERS) Makefile
+	$(CC) $(CFLAGS) -c $< -o $@
 
-fclean : clean
-	rm -f $(Name)
+clean :
+	$(RM) $(OBJECTS)
 
-re : fclean $(NAME)
+fclean : clean 
+	$(RM) $(NAME)
+
+re : fclean
+	$(MAKE) all
+
+.PHONY: all clean fclean re
