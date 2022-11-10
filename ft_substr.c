@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   teststrdup.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 11:24:12 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/10 12:39:14 by amontalb         ###   ########.fr       */
+/*   Created: 2022/11/10 14:12:50 by amontalb          #+#    #+#             */
+/*   Updated: 2022/11/10 14:34:02 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char		*s2;
-	size_t		i;
+	char 			*sub;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	s2 = malloc ((strlen(s1) + 1) * (sizeof(char)));
-	if (!s2)
+	j = start;
+	sub = (char *) malloc(sizeof(char) * len);
+	if (!sub)
 		return (NULL);
-	while (i < strlen(s1))
+	while(s[j] && i < len)
 	{
-		s2[i] = s1[i];
-		i++;
+		sub[i++] = s[j++];
 	}
-	s2[i] = '\0';
-	return (s2);
-}
-
-int main()
-{
-    char source[] = "GeeksForGeeks";
-
-    char* target = ft_strdup(source);
- 
-    printf("%s", target);
-	printf("%d", target[13]);
-    return 0;
+	return (sub);
 }
