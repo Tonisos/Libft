@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:34:01 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/10 17:45:24 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/10 17:47:34 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t	n)
 		if (a == *s1)
 			return (s1);
 		n--;
-		*s1++;
+		s1++;
 	}
 	return (NULL);
 }
