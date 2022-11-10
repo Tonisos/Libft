@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:04:10 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/10 17:14:10 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/10 17:19:58 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	char	a;
 	char	*s1;
 
-    if (!s)
+    if (s == NULL)
         return (NULL);
 
 	a = (char) c;
