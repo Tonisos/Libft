@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 09:00:28 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/10 16:39:28 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:40:55 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlen(const char *s);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strrchr(const char *s, int c);
-char		*ft_strchr(const char *s, int c)
+char		*ft_strchr(const char *s, int c);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 void		*ft_calloc(size_t count, size_t size);
