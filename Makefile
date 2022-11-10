@@ -6,7 +6,7 @@
 #    By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 15:48:53 by amontalb          #+#    #+#              #
-#    Updated: 2022/11/10 11:54:38 by amontalb         ###   ########.fr        #
+#    Updated: 2022/11/10 13:56:35 by amontalb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = ft_*.c
+SRCS = $(shell find . -type f -name 'ft_*.c')
 OBJS = $(SRCS:.c=.o)
 HEADERS = libft.h
 LIB = ar rc
@@ -31,7 +31,8 @@ $(NAME) : $(OBJS)
 		$(LIB) $(NAME) $(OBJS)
 		
 
-clean : rm -f $(OBJS)
+clean : 
+	rm -f $(OBJS)
 
 fclean : clean
 	rm -f $(Name)

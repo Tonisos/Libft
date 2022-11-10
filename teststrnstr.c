@@ -33,10 +33,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 int main () {
    const char haystack[20] = "TutorialsPointtutu";
-   const char needle[10] = "";
+   const char needle[10] = "Poin";
    char *ret;
 
-   ret = strnstr(haystack, needle, 16);
+   ret = ft_strnstr(haystack, needle, 16);
 
    printf("The substring is: %s\n", ret);
    
