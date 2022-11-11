@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoinemontalbetti <antoinemontalbetti@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 09:00:28 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/10 17:28:33 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:36:30 by antoinemont      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 int			ft_atoi(char *str);
+char    *ft_strtrim(char const *s1, char const *set);
 #endif
