@@ -6,7 +6,7 @@
 /*   By: antoinemontalbetti <antoinemontalbetti@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:21:25 by antoinemont       #+#    #+#             */
-/*   Updated: 2022/11/11 16:34:37 by antoinemont      ###   ########.fr       */
+/*   Updated: 2022/11/11 17:07:36 by antoinemont      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,12 @@ char    *ft_strtrim(char const *s1, char const *set)
     char *trim;
 
     j = 0;
-    count = ft_countstart(s1, set) + ft_countend(s1, set);
+    count = ft_strlen(s1) - ft_countstart(s1, set) - (ft_strlen(s1) - ft_countend(s1, set)) + 2;
     i = ft_countstart(s1, set);
 
     trim =(char *) malloc(sizeof(char) * count);
+	if (!trim)
+		return (NULL);
     while (i < ft_countend(s1, set) + 1)
     {
         trim[j] = s1[i];
