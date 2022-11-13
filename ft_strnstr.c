@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoinemontalbetti <antoinemontalbetti@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 11:15:41 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/10 16:13:33 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/13 18:40:12 by antoinemont      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	int		j;
 
 	i = 0;
+	if (!haystack)
+		return (NULL);
 	if (!needle)
 		return ((char *) haystack);
 	while (haystack[i] && i < len)
