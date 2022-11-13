@@ -6,7 +6,7 @@
 /*   By: antoinemontalbetti <antoinemontalbetti@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 09:00:28 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/13 18:23:03 by antoinemont      ###   ########.fr       */
+/*   Updated: 2022/11/13 18:26:52 by antoinemont      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ char		*ft_strjoin(char const *s1, char const *s2);
 int			ft_atoi(const char *str);
 char    	*ft_strtrim(char const *s1, char const *set);
 int			ft_nbrlign(char const *s, char c);
+char		**ft_split(char const *s, char c);
 #endif

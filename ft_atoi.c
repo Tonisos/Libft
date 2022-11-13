@@ -6,7 +6,7 @@
 /*   By: antoinemontalbetti <antoinemontalbetti@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:43:25 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/13 18:22:41 by antoinemont      ###   ########.fr       */
+/*   Updated: 2022/11/13 18:33:19 by antoinemont      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_atoi(const char *str)
 	result = 0;
 	sign = 1;
 	while (*str == ' ' || *str == '\t' || *str == '\n'
-		|| *str == '\f' || *str == '\v')
+		|| *str == '\f' || *str == '\v' || *str == '\r')
 		str++;
 	if (*str == 43 || *str == 45)
 	{
