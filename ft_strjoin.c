@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoinemontalbetti <antoinemontalbetti@    +#+  +:+       +#+        */
+/*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:34:14 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/13 18:47:53 by antoinemont      ###   ########.fr       */
+/*   Updated: 2022/11/14 17:47:42 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		size;
 	char	*join;
-	int 	i;
+	int		i;
 	int		j;
 
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:31:16 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/14 09:41:03 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/14 17:40:44 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
-	
 	if (dstsize == 0)
 		return (ft_strlen(src));
 	while (i < (dstsize - 1) && src[i])
@@ -28,4 +27,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (ft_strlen(src));
 }
-

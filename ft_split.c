@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/14 17:45:37 by amontalb          #+#    #+#             */
+/*   Updated: 2022/11/14 17:48:23 by amontalb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_nbrword(char const *s, char c)
@@ -14,28 +26,28 @@ int	ft_nbrword(char const *s, char c)
 		if (s[i] != c)
 			nbr ++;
 		while (s[i] && s[i] != c)
-			i++; 
+			i++;
 	}
 	return (nbr);
 }
-char *ft_word(char const *s, char c, int i)
+
+char	*ft_word(char const *s, char c, int i)
 {
-	int	count;
-	int	j;
-	int	k;
-	char *word;
+	int		count;
+	int		j;
+	int		k;
+	char	*word;
 
 	count = 0;
 	j = i;
 	k = 0;
-	
-	while(s[i] && s[i] != c)
+	while (s[i] && s[i] != c)
 	{
 		i++;
 		count++;
 	}
 	word = malloc ((count + 1) * sizeof(char));
-	while (s[j] && s[j] != c )
+	while (s[j] && s[j] != c)
 	{
 		word[k] = s[j];
 		k++;
@@ -47,13 +59,14 @@ char *ft_word(char const *s, char c, int i)
 
 char	**ft_split(char const *s, char c)
 {
-	int	i;
-	int	k;
-	char **split;
+	int		i;
+	int		k;
+	char	**split;
 
 	i = 0;
 	k = 0;
-	if (!(split = malloc(sizeof(char *) * (ft_nbrword(s, c) + 1))))
+	split = malloc(sizeof(char *) * (ft_nbrword(s, c) + 1));
+	if (!split)
 		return (NULL);
 	while (s[i])
 	{

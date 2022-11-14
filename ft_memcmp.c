@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:03:22 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/14 09:51:11 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/14 17:44:53 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*t1;
 	unsigned char	*t2;
-	size_t	i;
+	size_t			i;
 
 	i = 0;
 	if (n == 0)
