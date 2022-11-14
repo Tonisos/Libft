@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:41:33 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/09 09:02:56 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:06:22 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*dest;
 
-	if (b == NULL)
-		return (NULL);
 	dest = b;
 	while (len > 0)
 	{
