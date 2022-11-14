@@ -1,67 +1,69 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: antoinemontalbetti <antoinemontalbetti@    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 15:38:46 by antoinemont       #+#    #+#             */
-/*   Updated: 2022/11/13 18:15:46 by antoinemont      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-int	ft_nbrlign(char const *s, char c)
+int	ft_nbrword(char const *s, char c)
 {
 	int	i;
-	int	count;
+	int	nbr;
 
 	i = 0;
-	count = 0;
+	nbr = 0;
 	while (s[i])
 	{
-		if (s[i] != c)
-			count ++;
-		while (s[i] && s[i] != c)
-			i++;
 		while (s[i] && s[i] == c)
 			i++;
+		if (s[i] != c)
+			nbr ++;
+		while (s[i] && s[i] != c)
+			i++; 
 	}
-	return (i + 1);
+	return (nbr);
 }
-int ft_nbrcol(char const *s, char c, int i)
+char *ft_word(char const *s, char c, int i)
 {
-	while (s[i] && s[i] != c)
+	int	count;
+	int	j;
+	int	k;
+	char *word;
+
+	count = 0;
+	j = i;
+	k = 0;
+	
+	while(s[i] && s[i] != c)
+	{
 		i++;
-	return (i);
+		count++;
+	}
+	word = malloc ((count + 1) * sizeof(char));
+	while (s[j] && s[j] != c )
+	{
+		word[k] = s[j];
+		k++;
+		j++;
+	}
+	word[k] = '\0';
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**split;
-	int		i;
-	int		j;
-	int		k;
+	int	i;
+	int	k;
+	char **split;
 
-	k = 0;
 	i = 0;
-	split = malloc (ft_nbrlign(s, c) * sizeof(char));
+	k = 0;
+	if (!(split = malloc(sizeof(char *) * (ft_nbrword(s, c) + 1))))
+		return (NULL);
 	while (s[i])
 	{
-		j = 0;
+		if (s[i] != c)
+			split[k++] = ft_word(s, c, i);
 		while (s[i] && s[i] != c)
-		{
-			split[k] = malloc (sizeof (char) * ft_nbrcol(s, c, i));
-			split[k][j] = s[i];
 			i++;
-			j++;
-		}
-		k++;
 		while (s[i] && s[i] == c)
 			i++;
 	}
-	split[k] = 0;
+	split[k] = NULL;
 	return (split);
 }
-

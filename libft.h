@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoinemontalbetti <antoinemontalbetti@    +#+  +:+       +#+        */
+/*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 09:00:28 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/13 18:26:52 by antoinemont      ###   ########.fr       */
+/*   Updated: 2022/11/14 15:33:47 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,9 @@ int			ft_atoi(const char *str);
 char    	*ft_strtrim(char const *s1, char const *set);
 int			ft_nbrlign(char const *s, char c);
 char		**ft_split(char const *s, char c);
+char		*ft_itoa(int n);
+char 		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void 		ft_striteri(char *s, void (*f)(unsigned int, char*));
+void		ft_putchar_fd(char c, int fd);
+void		ft_putstr_fd(char *s, int fd);
 #endif
