@@ -6,7 +6,7 @@
 /*   By: antoinemontalbetti <antoinemontalbetti@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:52:37 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/15 19:43:31 by antoinemont      ###   ########.fr       */
+/*   Updated: 2022/11/15 19:45:34 by antoinemont      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*begin;
 	t_list	*newnode;
 
+	newnode = NULL;
 	while (lst)
 	{
 		begin = ft_lstnew(f(lst->content));
