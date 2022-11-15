@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:45:37 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/14 17:48:23 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/15 10:39:13 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,21 @@ int	ft_nbrword(char const *s, char c)
 	return (nbr);
 }
 
-char	*ft_word(char const *s, char c, int i)
+char	*ft_free(char **split, int lign)
+{
+	int	i;
+
+	i = 0;
+	while (i < lign)
+	{
+		free(split[i]);
+		i++;
+	}
+	free (split);
+	return (NULL);
+}
+
+char	*ft_word(char const *s, char c, int i, char **split)
 {
 	int		count;
 	int		j;
@@ -47,6 +61,8 @@ char	*ft_word(char const *s, char c, int i)
 		count++;
 	}
 	word = malloc ((count + 1) * sizeof(char));
+	if (!word)
+		return (ft_free(split, ft_nbrword(s, c)));
 	while (s[j] && s[j] != c)
 	{
 		word[k] = s[j];
@@ -71,7 +87,7 @@ char	**ft_split(char const *s, char c)
 	while (s[i])
 	{
 		if (s[i] != c)
-			split[k++] = ft_word(s, c, i);
+			split[k++] = ft_word(s, c, i, split);
 		while (s[i] && s[i] != c)
 			i++;
 		while (s[i] && s[i] == c)

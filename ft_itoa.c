@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:23:04 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/14 17:39:36 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/15 08:09:30 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	str[i--] = '\0';
 	if (m == 0)
-	{
 		str[0] = '0';
-		return (str);
-	}
 	if (m < 0)
 	{
 		str[0] = '-';
