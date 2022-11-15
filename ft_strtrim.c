@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:21:25 by antoinemont       #+#    #+#             */
-/*   Updated: 2022/11/15 08:47:45 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:16:04 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*trim;
 
 	if (set == NULL)
-		return (ft_strdup(s1));
+		return ((char *) s1);
 	j = 0;
 	count = ft_countend(s1, set) - ft_countstart(s1, set) + 2;
 	start = ft_countstart(s1, set);
