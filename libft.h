@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 09:00:28 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/15 15:29:01 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/15 16:41:53 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <stdint.h>
 
 typedef struct s_list
 {
