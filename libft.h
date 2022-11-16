@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 09:00:28 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/16 12:50:48 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:10:32 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define  LIBFT_H
 
 # include <unistd.h>
-# include <string.h>
 # include <stdlib.h>
 # include <stdint.h>
 # include <limits.h>
