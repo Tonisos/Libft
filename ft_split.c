@@ -6,13 +6,13 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:45:37 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/15 10:39:13 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/16 11:08:42 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_nbrword(char const *s, char c)
+static int	ft_nbrword(char const *s, char c)
 {
 	int	i;
 	int	nbr;
@@ -21,22 +21,22 @@ int	ft_nbrword(char const *s, char c)
 	nbr = 0;
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
-			i++;
 		if (s[i] != c)
 			nbr ++;
 		while (s[i] && s[i] != c)
+			i++;
+		while (s[i] && s[i] == c)
 			i++;
 	}
 	return (nbr);
 }
 
-char	*ft_free(char **split, int lign)
+static char	**ft_free(char **split, int lign)
 {
 	int	i;
 
 	i = 0;
-	while (i < lign)
+	while (i <= lign)
 	{
 		free(split[i]);
 		i++;
@@ -45,7 +45,7 @@ char	*ft_free(char **split, int lign)
 	return (NULL);
 }
 
-char	*ft_word(char const *s, char c, int i, char **split)
+static char	*ft_word(char const *s, char c, int i)
 {
 	int		count;
 	int		j;
@@ -60,9 +60,9 @@ char	*ft_word(char const *s, char c, int i, char **split)
 		i++;
 		count++;
 	}
-	word = malloc ((count + 1) * sizeof(char));
+	word = (char *) malloc ((count + 1) * sizeof(char));
 	if (!word)
-		return (ft_free(split, ft_nbrword(s, c)));
+		return (NULL);
 	while (s[j] && s[j] != c)
 	{
 		word[k] = s[j];
@@ -81,13 +81,18 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	k = 0;
-	split = malloc(sizeof(char *) * (ft_nbrword(s, c) + 1));
+	split = (char **) malloc(sizeof(char *) * (ft_nbrword(s, c) + 1));
 	if (!split)
 		return (NULL);
 	while (s[i])
 	{
 		if (s[i] != c)
-			split[k++] = ft_word(s, c, i, split);
+		{
+			split[k] = ft_word(s, c, i);
+			if (!split[k])
+				return (ft_free(split, k));
+			k++;
+		}
 		while (s[i] && s[i] != c)
 			i++;
 		while (s[i] && s[i] == c)

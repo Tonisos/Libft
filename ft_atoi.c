@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoinemontalbetti <antoinemontalbetti@    +#+  +:+       +#+        */
+/*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:43:25 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/13 18:33:19 by antoinemont      ###   ########.fr       */
+/*   Updated: 2022/11/16 12:46:15 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *str)
 {
-	int	sign;
-	int	result;
+	int				sign;
+	long long int	result;
 
 	result = 0;
 	sign = 1;
@@ -29,9 +29,12 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	while (*str >= '0' && *str <= '9')
-	{
+	{	
+		if (result * sign != (((sign * result * 10 + ((*str - '0'))
+						- (*str - '0'))) / 10))
+			return ((sign + 1) / 2 / -1);
 		result = result * 10 + *str - '0';
 		str++;
 	}
-	return (result * sign);
+	return ((int)result * sign);
 }

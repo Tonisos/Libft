@@ -6,13 +6,13 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:23:04 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/15 08:09:30 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/16 10:50:11 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_sizechar(int n)
+static int	ft_sizechar(int n)
 {
 	int	size;
 
