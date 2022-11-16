@@ -6,7 +6,7 @@
 #    By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 15:47:53 by amontalb          #+#    #+#              #
-#    Updated: 2022/11/16 14:10:56 by amontalb         ###   ########.fr        #
+#    Updated: 2022/11/16 14:13:23 by amontalb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME = libft.a
 
 HEADERS = libft.h
 
-HEADERS_BONUS = lift_bonus.h
 
 SOURCES = ft_isdigit.c ft_memset.c ft_strjoin.c ft_strtrim.c ft_isprint.c\
 		ft_putchar_fd.c ft_strlcat.c ft_substr.c ft_atoi.c ft_itoa.c ft_putendl_fd.c\
