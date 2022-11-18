@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 14:46:56 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/16 16:34:18 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/18 08:24:54 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
-	if (!f)
+	if (!f || !s)
 		return (NULL);
 	dest = malloc (sizeof(char) * (ft_strlen(s) + 1));
 	if (!dest)
