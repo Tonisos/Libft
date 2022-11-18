@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 08:58:20 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/09 08:59:25 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/18 08:39:49 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*p;
 
+	if (n == 0)
+		return ;
 	p = s;
 	while (n > 0)
 	{
