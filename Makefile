@@ -6,7 +6,7 @@
 #    By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 15:47:53 by amontalb          #+#    #+#              #
-#    Updated: 2022/11/16 14:13:23 by amontalb         ###   ########.fr        #
+#    Updated: 2022/11/18 11:11:20 by amontalb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ all :    $(NAME)
 $(NAME) : $(OBJECTS)
 	$(AR) rcs $@ $^
 
-bonus : ${OBJS} ${OBJECTS_BONUS}
+bonus : ${OBJECTS} ${OBJECTS_BONUS}
 	ar rcs ${NAME} ${OBJECTS} ${OBJECTS_BONUS}
 	
 %.o : %.c $(HEADERS) Makefile
