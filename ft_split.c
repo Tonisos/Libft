@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:45:37 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/18 11:48:39 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/21 08:31:01 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,17 +73,13 @@ static char	*ft_word(char const *s, char c, int i)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+char	**write_split(char **split, char const *s, char c)
 {
-	int		i;
-	int		k;
-	char	**split;
+	int	i;
+	int	k;
 
 	i = 0;
 	k = 0;
-	split = (char **) malloc(sizeof(char *) * (ft_nbrword(s, c) + 1));
-	if (!split)
-		return (NULL);
 	while (s[i])
 	{
 		if (s[i] != c)
@@ -100,4 +96,16 @@ char	**ft_split(char const *s, char c)
 	}
 	split[k] = NULL;
 	return (split);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**split;
+
+	if (!s)
+		return (NULL);
+	split = (char **) malloc(sizeof(char *) * (ft_nbrword(s, c) + 1));
+	if (!split)
+		return (NULL);
+	return (write_split(split, s, c));
 }
