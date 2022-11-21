@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:45:37 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/21 08:31:01 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/21 08:50:14 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_nbrword(char const *s, char c)
 
 static char	**ft_free(char **split, int lign)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i <= lign)
@@ -47,10 +47,10 @@ static char	**ft_free(char **split, int lign)
 
 static char	*ft_word(char const *s, char c, int i)
 {
-	int		count;
-	int		j;
-	int		k;
-	char	*word;
+	size_t		count;
+	size_t		j;
+	size_t		k;
+	char		*word;
 
 	count = 0;
 	j = i;
@@ -75,8 +75,8 @@ static char	*ft_word(char const *s, char c, int i)
 
 char	**write_split(char **split, char const *s, char c)
 {
-	int	i;
-	int	k;
+	size_t	i;
+	size_t	k;
 
 	i = 0;
 	k = 0;

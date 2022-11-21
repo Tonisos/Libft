@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:55:10 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/18 11:23:54 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/21 08:47:11 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
+	size_t	i;
 
 	if (!s)
 		return ;

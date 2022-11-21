@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:34:02 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/16 16:18:32 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/21 08:46:36 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	a;
+	size_t		i;
+	char		a;
 
 	a = (char) c;
 	i = ft_strlen(s);

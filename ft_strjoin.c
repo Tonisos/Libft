@@ -6,7 +6,7 @@
 /*   By: amontalb <amontalb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:34:14 by amontalb          #+#    #+#             */
-/*   Updated: 2022/11/18 11:18:38 by amontalb         ###   ########.fr       */
+/*   Updated: 2022/11/21 08:49:14 by amontalb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		size;
-	char	*join;
-	int		i;
-	int		j;
+	size_t		size;
+	char		*join;
+	size_t		i;
+	size_t		j;
 
 	i = 0;
 	j = 0;
